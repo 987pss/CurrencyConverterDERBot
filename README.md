@@ -8,3 +8,6 @@
 - предусмотрено сообщение об ошибке подключения;
 
 В файле config.py помимо токена также разместил словарь с валютами и тексты сообщений для бота.
+
+@CurrencyConverterDERBot
+https://t.me/CurrencyConverterDERBot
