@@ -12,7 +12,7 @@ class APIRequests:
             message_split = message.text.split(' ')
             base, quote, amount = message_split
         except ValueError:
-            raise ValueError(error_message)
+            raise APIException(error_message)
         else:
             try:
                 if base.lower() not in currencies.keys() and base.upper() not in currencies.values():
@@ -31,7 +31,7 @@ class APIRequests:
                         if float(amount) < 0:
                             raise APIException(error_amount)
                     except ValueError:
-                        raise ValueError(error_amount)
+                        raise APIException(error_amount)
                     except APIException:
                         raise APIException(error_amount)
                     else:
@@ -48,7 +48,7 @@ class APIRequests:
                                                             f'fsym={base_code}'
                                                             f'&tsyms={quote_code}')
                         except Exception:
-                            raise Exception(error_connection)
+                            raise APIException(error_connection)
                         else:
                             request_result_1_content = request_result_1.content
                             result_1 = json.loads(request_result_1_content)[quote_code]
