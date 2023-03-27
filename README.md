@@ -11,3 +11,4 @@
 
 @CurrencyConverterDERBot
 https://t.me/CurrencyConverterDERBot
+(удалён)
